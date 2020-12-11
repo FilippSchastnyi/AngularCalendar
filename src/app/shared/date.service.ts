@@ -13,4 +13,13 @@ export class DateService {
     const value = this.date.value.add(dir, 'month');
     this.date.next(value);
   }
+
+  // tslint:disable-next-line:typedef
+  changeDate(date: moment.Moment) {
+    const value = this.date.value.set({
+      date: date.date(),
+      month: date.month()
+    });
+    this.date.next(value);
+  }
 }
